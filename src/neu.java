@@ -1,0 +1,2 @@
+public class neu {
+}
