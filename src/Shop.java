@@ -1,19 +1,15 @@
-
-
+import java.util.ArrayList;
+import java.util.List;
 public class Shop {
-
-    public class Shop {
-        public List<Customer> customers;
-        public List<Product> products;
-        public List<ShoppingBasket> shoppingBaskets;
-        private List<Invoice> invoices;
-
-        public Shop() {
-            customers = new ArrayList<>();
-            products = new ArrayList<>();
-            shoppingBaskets = new ArrayList<>();
-            invoices = new ArrayList<>();
-        }
+   public static void main(String[] args) {
+       //   System.out.println();
+   }
+    //Autoboxing
+        List<Customer> customers = new ArrayList<>();
+        List<Product> products = new ArrayList<>();
+        List<ShoppingBasket> baskets = new ArrayList<>();
+        List<Invoice> invoices = new ArrayList<>();
+        List<Order> orders = new ArrayList<>();
 
         public void addCustomer(Customer customer) {
             customers.add(customer);
@@ -23,9 +19,10 @@ public class Shop {
             products.add(product);
         }
 
-        public ShoppingBasket createShoppingBasket(Customer customer) {
-            ShoppingBasket basket = new ShoppingBasket(customer);
-            shoppingBaskets.add(basket);
+        //Produkte ergänzen?
+        public ShoppingBasket createShoppingBasket() {
+            ShoppingBasket basket = new ShoppingBasket();
+            baskets.add(basket);
             return basket;
         }
 
@@ -35,8 +32,11 @@ public class Shop {
             return invoice;
         }
 
-        public void placeOrder(Invoice invoice) {
-            // Place the order
+        public Order placeOrder(Invoice invoice, Customer customer) {
+            Order order = new Order(invoice, customer);
+            orders.add(order);
+            return order;
         }
-    }
+
+
 }
