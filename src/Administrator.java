@@ -1,7 +1,7 @@
 public class Administrator extends Person {
-    private String jobTitle; //intrinsic attribute alternative administratorId
+    private String jobTitle;
 
-    //or administratorId instead jobTitle?
+
     public Administrator(String email, String password, String username, String jobTitle) {
         super(email, password, username);
         this.jobTitle = jobTitle;

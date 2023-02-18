@@ -7,9 +7,7 @@ public class Order {
     private Date approximateArrivalDate;
     private boolean declined;
     private Administrator declinedBy;
-
     private double price = 0.0;
-
     private HashMap<Product, Integer> items = new HashMap<>();
 
     public Order(ShoppingBasket shoppingBasket) {

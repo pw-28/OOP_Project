@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class Customer extends Person {
     private String firstName;
-    private String lastName; //intrinsic attribute (alternative customerId see Project 2)
+    private String lastName;
 
     private HashMap<String,Address> addressMap = new HashMap();
 

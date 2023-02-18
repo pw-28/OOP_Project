@@ -1,8 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
-// are not used
-//Use a Map like HashMap to store various Addresses using
-//public static final String keys!!
 public class Address {
     private String country;
     private String streetName;
