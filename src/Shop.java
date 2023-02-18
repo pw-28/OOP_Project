@@ -1,44 +1,33 @@
-import java.util.ArrayList;
-import java.util.List;
 public class Shop {
-   //public static void main(String[] args) {
-       //   System.out.println();
-  // }
-    //Autoboxing
-        List<Customer> customers = new ArrayList<>();
-        List<Product> products = new ArrayList<>();
-        List<ShoppingBasket> baskets = new ArrayList<>();
-        List<Invoice> invoices = new ArrayList<>();
-        List<Order> orders = new ArrayList<>();
+    public Customer createCustomer(String email, String password, String username, String firstName, String lastName, Address billing, Address delivery){
+        return new Customer(email,password,username,firstName,lastName,billing,delivery);
+    }
 
-        public void addCustomer(Customer customer) {
-            customers.add(customer);
-        }
+    public  Address createAddress(String country, String streetName, String streetNumber, String zipCode){
+        return  new Address(country,streetName,streetNumber,zipCode);
+    }
 
-        public void addProduct(Product product) {
-            products.add(product);
-        }
+    public  Administrator createAdministrator(String email, String password, String username, String jobTitle){
+        return new Administrator(email,password,username,jobTitle);
+    }
 
-        //add products?
+    public Product createProduct(String name, String description, double price){
+        return new Product(name,description,price);
+    }
 
-
-        public ShoppingBasket createShoppingBasket() {
-            ShoppingBasket basket = new ShoppingBasket();
-            baskets.add(basket);
-            return basket;
-        }
-
-        public Invoice createInvoice(ShoppingBasket basket) {
-            Invoice invoice = new Invoice(basket);
-            invoices.add(invoice);
-            return invoice;
-        }
-
-        public Order placeOrder(Invoice invoice, Customer customer) {
-            Order order = new Order(invoice, customer);
-            orders.add(order);
-            return order;
-        }
-
-
+    public ShoppingBasket createShoppingBasket(Customer customer){
+        return new ShoppingBasket(customer);
+    }
+    public void addProductToBasket(ShoppingBasket shoppingBasket, Product product, Integer amount){
+        shoppingBasket.addItem(product,amount);
+    }
+    public void removeProductFromBasket(ShoppingBasket shoppingBasket, Product product, Integer amount){
+        shoppingBasket.removeItem(product,amount);
+    }
+    public Order createOrder(ShoppingBasket shoppingBasket){
+        return new Order(shoppingBasket);
+    }
+    public void declineOrder(Order order, Administrator administrator){
+        order.decline(administrator);
+    }
 }

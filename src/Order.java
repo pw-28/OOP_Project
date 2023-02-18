@@ -1,32 +1,35 @@
-/
-import java.util.Date;
-import java.util.UUID;
+import java.util.*;
 
 public class Order {
     private UUID id;
     private Customer customer;
-    private Address deliveryAddress;
-    private Address billingAddress;
     private Date creationDate;
     private Date approximateArrivalDate;
     private boolean declined;
     private Administrator declinedBy;
 
-    public Order(Customer customer, Address deliveryAddress, Address billingAddress) {
+    private double price = 0.0;
+
+    private HashMap<Product, Integer> items = new HashMap<>();
+
+    public Order(ShoppingBasket shoppingBasket) {
         this.id = UUID.randomUUID();
-        this.customer = customer;
-        this.deliveryAddress = deliveryAddress;
-        this.billingAddress = billingAddress;
+        this.customer = shoppingBasket.getCustomer();
         this.creationDate = new Date();
-        this.approximateArrivalDate = null;
+        Calendar c = Calendar.getInstance();
+        c.setTime(creationDate);
+        c.add(Calendar.DATE, 7);
+        this.approximateArrivalDate = c.getTime();
         this.declined = false;
         this.declinedBy = null;
+        this.items = shoppingBasket.getItems();
+
+        for (Map.Entry<Product,Integer> e : items.entrySet()){
+            this.price = this.price + e.getValue()* e.getKey().getPrice();
+        }
+
     }
 
-    public Order(Invoice invoice, Customer customer) {
-    }
-    //Constructor
-    //delete Invoice
 
     public UUID getId() {
         return id;
@@ -34,14 +37,6 @@ public class Order {
 
     public Customer getCustomer() {
         return customer;
-    }
-
-    public Address getDeliveryAddress() {
-        return deliveryAddress;
-    }
-
-    public Address getBillingAddress() {
-        return billingAddress;
     }
 
     public Date getCreationDate() {
@@ -70,5 +65,17 @@ public class Order {
 
     public void setDeclinedBy(Administrator declinedBy) {
         this.declinedBy = declinedBy;
+    }
+
+    public double getPrice(){
+        return this.price;
+    }
+    public void setPrice(double price){
+        this.price = price;
+    }
+
+    public void decline(Administrator administrator){
+        this.declinedBy = administrator;
+        this.declined = true;
     }
 }

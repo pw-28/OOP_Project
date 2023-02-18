@@ -3,11 +3,11 @@ import java.util.Map;
 
 public class ShoppingBasket {
     private Customer customer;
-    private Map<Product, Integer> items;
+    private HashMap<Product, Integer> items = new HashMap<>();
 
     public ShoppingBasket(Customer customer) {
         this.customer = customer;
-        this.items = new HashMap<Product, Integer>();
+
     }
 
     public void addItem(Product product, int quantity) {
@@ -30,11 +30,18 @@ public class ShoppingBasket {
         }
     }
 
-    public Map<Product, Integer> getItems() {
+    public HashMap<Product, Integer> getItems() {
         return items;
     }
 
-    public void setItems(Map<Product, Integer> items) {
+    public void setItems(HashMap<Product, Integer> items) {
         this.items = items;
+    }
+
+    public Customer getCustomer(){
+        return this.customer;
+    }
+    public void setCustomer(Customer customer){
+        this.customer = customer;
     }
 }

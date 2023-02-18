@@ -1,5 +1,5 @@
 public class Administrator extends Person {
-    private String jobTitle;
+    private String jobTitle; //intrinsic attribute alternative administratorId
 
     //or administratorId instead jobTitle?
     public Administrator(String email, String password, String username, String jobTitle) {
@@ -8,10 +8,12 @@ public class Administrator extends Person {
     }
 
     public String getJobTitle() {
+
         return jobTitle;
     }
 
     public void setJobTitle(String jobTitle) {
+
         this.jobTitle = jobTitle;
     }
 

@@ -1,5 +1,5 @@
 public abstract class Person {
-    //private weglassen möglich?
+
     private String email;
     private String password;
     private String username;
