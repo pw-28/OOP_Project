@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 public class Shop {
-   public static void main(String[] args) {
+   //public static void main(String[] args) {
        //   System.out.println();
-   }
+  // }
     //Autoboxing
         List<Customer> customers = new ArrayList<>();
         List<Product> products = new ArrayList<>();
@@ -19,7 +19,9 @@ public class Shop {
             products.add(product);
         }
 
-        //Produkte ergänzen?
+        //add products?
+
+
         public ShoppingBasket createShoppingBasket() {
             ShoppingBasket basket = new ShoppingBasket();
             baskets.add(basket);
