@@ -1,5 +1,4 @@
 public abstract class Person {
-
     private String email;
     private String password;
     private String username;

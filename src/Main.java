@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         Shop shop = new Shop();
+
         // Adressen erzeugen
         Address billing = shop.createAddress("Austria", "Jörgerstraße","35", "1170" );
         Address delivery = shop.createAddress("Austria", "Jörgerstraße","35", "1170");

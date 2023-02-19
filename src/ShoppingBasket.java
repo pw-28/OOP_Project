@@ -1,6 +1,4 @@
 import java.util.HashMap;
-//import java.util.Map;
-
 public class ShoppingBasket {
     private Customer customer;
     private HashMap<Product, Integer> items = new HashMap<>();

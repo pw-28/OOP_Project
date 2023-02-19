@@ -1,5 +1,4 @@
 import java.util.HashMap;
-
 public class Customer extends Person {
     private String firstName;
     private String lastName;

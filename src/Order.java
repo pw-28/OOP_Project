@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class Order {
     private UUID id;
     private Customer customer;
