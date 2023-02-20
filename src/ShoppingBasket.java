@@ -29,17 +29,21 @@ public class ShoppingBasket {
     }
 
     public HashMap<Product, Integer> getItems() {
+
         return items;
     }
 
     public void setItems(HashMap<Product, Integer> items) {
+
         this.items = items;
     }
 
     public Customer getCustomer(){
+
         return this.customer;
     }
     public void setCustomer(Customer customer){
+
         this.customer = customer;
     }
 }

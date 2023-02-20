@@ -65,6 +65,7 @@ public class Order {
     }
 
     public double getPrice(){
+
         return this.price;
     }
     public void setPrice(double price){
@@ -76,3 +77,7 @@ public class Order {
         this.declined = true;
     }
 }
+
+//An Administrator must be able to decline an Order by
+//setting the declined flag, the Administrator that declined
+//the order is saved in the Order

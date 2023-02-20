@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         Shop shop = new Shop();
 
-        // Adressen erzeugen
+        // Adressen anlegen
         Address billing = shop.createAddress("Austria", "Jörgerstraße","35", "1170" );
         Address delivery = shop.createAddress("Austria", "Jörgerstraße","35", "1170");
 
@@ -28,6 +28,8 @@ public class Main {
         Order order1 = shop.createOrder(shoppingBasket);
         System.out.println(order1.getPrice());
         System.out.println(order1.getId());
+
+        //Order ablehnen
         System.out.println(order1.isDeclined());
         shop.declineOrder(order1, administrator1);
         System.out.println(order1.isDeclined());
